@@ -1,14 +1,17 @@
-import { ICalData } from "ical";
-import * as ical from "ical";
+import ICAL from 'ical.js';
 
-export const getICalData = async (link:string) : Promise<ICalData[]> => {
+export const getICalData = async (link:string) : Promise<ICAL.Event[]> => {
     const resp = await fetch(link);
-    const data = await resp.text();
+    var data = await resp.text();
 
-    const icalData = ical.parseICS(data.replaceAll(/\r/g, ''));
+    data = data.replaceAll(/\r/g, '')
 
-    const entries = Object.entries(icalData)
-      .map(([_, data]) => data);
+    const jcalData = ICAL.parse(data);
+    const comp = new ICAL.Component(jcalData);
+    var components = comp.getAllSubcomponents('vevent');
 
-    return entries;
+    return components.map(c => {
+      const evt = new ICAL.Event(c);
+      return evt;
+    });
 }

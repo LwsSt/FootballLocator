@@ -1,4 +1,4 @@
-import { ICalData } from "ical";
+import ICAL from 'ical.js';
 import { MatchData, RawMatchData, Location, Day, Time } from "./types";
 import { Stadia } from "./stadia";
 
@@ -13,7 +13,7 @@ const parseTeams = (summary:string):[string, string]|null => {
   }
 }
 
-const parseMatchData = (icalData:ICalData[]):RawMatchData[] => {
+const parseMatchData = (icalData:ICAL.Event[]):RawMatchData[] => {
   return icalData.map(i => {
     const teams = parseTeams(i.summary);
 
@@ -22,8 +22,8 @@ const parseMatchData = (icalData:ICalData[]):RawMatchData[] => {
         uid: i.uid,
         teams: teams,
         location: i.location,
-        endDate: i.end,
-        startDate: i.start,
+        endDate: i.endDate.toJSDate(),
+        startDate: i.startDate.toJSDate(),
       };
     } else {
       return null;
@@ -75,7 +75,7 @@ const enrichMatchData = (rawData:RawMatchData):MatchData => {
   }
 }
 
-export const getMatchData = (icalData:ICalData[]) : MatchData[] => {
+export const getMatchData = (icalData:ICAL.Event[]) : MatchData[] => {
   const rawMatchData = parseMatchData(icalData);
   const matchData = rawMatchData.map(enrichMatchData)
     .sort((a, b) => a.day.compare(b.day))
