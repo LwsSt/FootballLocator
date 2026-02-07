@@ -1,6 +1,10 @@
 [
   {
     "name": "PremierLeague",
-    "link": "https://ics.ecal.com/ecal-sub/68d0452364f67b0008c27465/English%20Premier%20League.ics"
+    "link": "https://ics.ecal.com/ecal-sub/698672d24210a50002e499e8/English%20Premier%20League.ics"
+  },
+  {
+    "name": "EFL Championship",
+    "link":  "https://ics.ecal.com/ecal-sub/698670b23858090002fad416/English%20Football%20League.ics"
   }
 ]
