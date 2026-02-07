@@ -3,7 +3,7 @@ import { MatchData, RawMatchData, Location, Day, Time } from "./types";
 import { Stadia } from "./stadia";
 
 const parseTeams = (summary:string):[string, string]|null => {
-  const regex = /([\w ]+) v ([\w ]+)/
+  const regex = /([\w ]+) vs? ([\w ]+)/
   const result = summary.match(regex);
 
   if (result) {
