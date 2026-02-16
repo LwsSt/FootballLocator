@@ -1,42 +1,39 @@
 import { Fragment } from 'react';
-import { getData } from '../lib/matches';
+import { getData } from '@/lib/matches';
 import { GetStaticProps, GetStaticPropsContext, InferGetStaticPropsType } from "next";
+import { DayMatches, groupIntoMonths, MatchDisplay, MonthMatches } from '@/lib/types';
 
-interface MatchDisplayData {
-  uid:string,
-  teams: [string, string],
-  location: string,
-  day: string,
-  start: string,
-  end: string
-}
-
-function Match(props:{ match:MatchDisplayData}) {
+function Match(props:{ match:MatchDisplay}) {
   const { match: m } = props;
 
   return (
-    <div>
-      <h2>{m.teams[0]} vs {m.teams[1]}</h2>
-      <p>{m.day}</p>
-      <span>{m.start} - {m.end}</span>
-    </div>
+    <p>{m.startTime} - {m.endTime}: <span style={{color:'gray'}}>{m.teams[0]} vs {m.teams[1]}</span></p>
+  );
+}
+
+function Day(props: { day:DayMatches }) {
+  const { day: day } = props;
+
+  return (
+  <div>
+    <h2>{day.day} <span>{day.month.month} {day.month.year}</span> <span style={{ color: 'gray'}}>({day.matches.length} matches)</span></h2>
+    {day.matches.map(d => <Match match={d} key={d.uid} />)}
+  </div>
   );
 }
 
 export default function Home({
-  matches
+  months: months
 }:InferGetStaticPropsType<typeof getStaticProps>) {
-
-  const data = Object.entries(matches);
 
   return (
     <div>
-      {data.map(([date, matches]) => (
-        <Fragment key={date}>
-          <h1 style={{color: 'red' }}>{date}</h1>
-          {matches?.map(m => (
-            <Match key={m.uid} match={m} />
-          ))}
+      {months.map((m) => (
+        <Fragment key={m.key}>
+          <h1 style={{color: 'red' }}>{m.month.month} {m.month.year}</h1>
+          {m.days?.map(d =>(
+              <Day day={d} key={d.key} />
+            ))}
           <hr />
         </Fragment>
       ))}
@@ -44,31 +41,25 @@ export default function Home({
   )
 }
 
-export const  getStaticProps = (async (context:GetStaticPropsContext):Promise<{ props:{ matches: Partial<Record<string, MatchDisplayData[]>> } }> =>{
+export const  getStaticProps = (async (context:GetStaticPropsContext):Promise<{ props:{ months: MonthMatches[] } }> =>{
   const data = await getData();
 
   const today = new Date();
+  today.setHours(0);
+  today.setMinutes(0);
 
-  const displayData = data
-    .filter(m => m.day.after(today))
-    .map(m => {
-    return {
-      uid: m.uid,
-      teams: m.teams,
-      location: m.location.name,
-      day: m.day.toDisplayString(),
-      start: m.startTime.toDisplayString(),
-      end: m.endTime.toDisplayString()
-    }
-  });
+  const sortedData = data
+    .filter(m => m.start >= today)
+    .sort((a, b) => a.start.getTime() - b.start.getTime());
 
-  const groupData = Object.groupBy(displayData, k => k.day);
+  const matches = groupIntoMonths(sortedData);
 
   return {
     props: {
-      matches: groupData
+      months: matches
     }
   };
+
 }) satisfies GetStaticProps<{
-  matches:Partial<Record<string, MatchDisplayData[]>>
+  months:MonthMatches[]
 }>
