@@ -33,13 +33,25 @@ export interface DayMatches {
   key: string,
   day: number,
   month: Month,
+  times: TimeMatches[]
+}
+
+export interface TimeMatches {
+  key: string,
+  time: {
+    hour: number,
+    minute: number
+  },
   matches: MatchDisplay[]
 }
 
 export interface MatchDisplay {
   uid:string,
   teams: [string, string],
-  location: string,
+  location: {
+    stadium: string,
+    city: string
+  },
   day: string,
   startTime: string,
   endTime: string
@@ -54,25 +66,49 @@ export function groupIntoMonths(matches: MatchData[]):MonthMatches[] {
     const d = match.start;
     const monthKey = `${d.getFullYear()}-${d.getMonth() + 1}`
     const day = d.getDate();
+    const time = `${d.getHours()}:${d.getMinutes()}`;
     
     acc[monthKey] ??= {}; 
-    acc[monthKey][day] ??= []; 
-    acc[monthKey][day].push(match); 
+    acc[monthKey][day] ??= {}; 
+    acc[monthKey][day][time] ??= [];
+    acc[monthKey][day][time].push(match); 
     
     return acc; 
-  }, {} as Record<string, Record<number, MatchData[]>>); 
+  }, {} as Record<string, Record<number, Record<string, MatchData[]>>>); 
 
-  return Object.entries(matchData)
+  return Object
+    .entries(matchData)
     .map(([monthKey, daysObj]) => {
       const [yearStr, monthStr] = monthKey.split("-");
       const year = Number(yearStr);
       const month = toMonthString(Number(monthStr));
-      const days: DayMatches[] = Object.entries(daysObj).map(([dayStr, matches]) => ({
-        key: `${month}-${dayStr}`,
-        day: Number(dayStr),
-        month: {month: month, year: year},
-        matches:matches.map(toDisplay)
-      })
+
+      const days: DayMatches[] = Object
+        .entries(daysObj)
+        .map(([dayStr, matchesObj]) => {
+
+          const times:TimeMatches[] = Object
+            .entries(matchesObj)
+            .map(([startTime, matches]) => {
+              const [hourStr, mintueStr] = startTime.split(":");
+
+              return {
+                key: startTime,
+                time: {
+                  hour: Number(hourStr),
+                  minute: Number(mintueStr)
+                },
+                matches: matches.map(toDisplay)
+              }
+            });
+
+        return {
+          key: `${month}-${dayStr}`,
+          day: Number(dayStr),
+          month: {month: month, year: year},
+          times:times
+        };
+      }
     );
 
     return {
@@ -89,7 +125,10 @@ export function groupIntoMonths(matches: MatchData[]):MonthMatches[] {
 const toDisplay = (match:MatchData):MatchDisplay =>{
   return {
     uid: match.uid,
-    location: match.location.name,
+    location: {
+      stadium: match.location.name,
+      city: 'CITY'
+    },
     teams: match.teams,
     day: toDateString(match.start),
     startTime: toTimeString(match.start),

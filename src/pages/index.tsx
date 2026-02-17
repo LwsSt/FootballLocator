@@ -1,24 +1,70 @@
 import { Fragment } from 'react';
 import { getData } from '@/lib/matches';
 import { GetStaticProps, GetStaticPropsContext, InferGetStaticPropsType } from "next";
-import { DayMatches, groupIntoMonths, MatchDisplay, MonthMatches } from '@/lib/types';
+import { DayMatches, groupIntoMonths, MatchDisplay, MonthMatches, TimeMatches, toTimeString } from '@/lib/types';
+import { match } from 'assert';
 
 function Match(props:{ match:MatchDisplay}) {
   const { match: m } = props;
+  const [teamA, teamB] = m.teams;
+  const { stadium, city } = m.location;
 
   return (
-    <p>{m.startTime} - {m.endTime}: <span style={{color:'gray'}}>{m.teams[0]} vs {m.teams[1]}</span></p>
+    <div className="match-item">
+      <div className="match-teams">{teamA} vs {teamB}</div>
+      <div className="match-location-info">
+        <span>📍</span>
+        <div>
+          <div className="stadium-name">{stadium}</div>
+          <div className="city-name">{city}</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Time(props: {time:TimeMatches}) {
+  const { time: time } = props;
+  const matchTime = new Date();
+  matchTime.setHours(time.time.hour);
+  matchTime.setMinutes(time.time.minute);
+
+  return (
+    <details className="time-slot">
+      <summary>
+        <div className="time-slot-header">
+            <div className="slot-time">{toTimeString(matchTime)}</div>
+            <div className="slot-count">{time.matches.length} Matches</div>
+        </div>
+      </summary>
+      <div className="matches-list">
+        {time.matches.map(m => <Match match={m} key={m.uid} />)}
+      </div>
+    </details>
   );
 }
 
 function Day(props: { day:DayMatches }) {
   const { day: day } = props;
+  const date = new Date(`${day.day} ${day.month.month} ${day.month.year}`);
+  const dayName = date.toLocaleString('default', { weekday: 'long'});
+  const totalMatches = day.times.map(t => t.matches.length).reduce((acc, curr) => acc + curr, 0);
 
   return (
-  <div>
-    <h2>{day.day} <span>{day.month.month} {day.month.year}</span> <span style={{ color: 'gray'}}>({day.matches.length} matches)</span></h2>
-    {day.matches.map(d => <Match match={d} key={d.uid} />)}
-  </div>
+    <div className="match-card danger">
+      <div className="match-card-header">
+          <div className="match-date-info">
+              <div className="match-day">{dayName}</div>
+              <div className="match-date">{day.day} {day.month.month}</div>
+              <div className="total-matches">{totalMatches} Matches Total</div>
+          </div>
+          <div className="match-status">LIVE NOW</div>
+      </div>
+      
+      <div className="time-slots">
+        {day.times.map(t => <Time time={t} key={t.key} />)}
+      </div>
+    </div>
   );
 }
 
@@ -27,17 +73,18 @@ export default function Home({
 }:InferGetStaticPropsType<typeof getStaticProps>) {
 
   return (
-    <div>
-      {months.map((m) => (
-        <Fragment key={m.key}>
-          <h1 style={{color: 'red' }}>{m.month.month} {m.month.year}</h1>
-          {m.days?.map(d =>(
-              <Day day={d} key={d.key} />
-            ))}
-          <hr />
-        </Fragment>
-      ))}
-    </div>
+      <Fragment>
+          {months.map((m) => (
+            <Fragment key={m.key}>
+              <div className="month-header">
+                  <div className="month-header-title">{m.month.month} 2026</div>
+              </div>
+              <div className="match-grid">
+                  {m.days.map(d => <Day day={d} key={d.key} />)}
+              </div>
+            </Fragment>
+          ))}
+    </Fragment>
   )
 }
 
