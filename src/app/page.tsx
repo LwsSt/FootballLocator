@@ -1,8 +1,6 @@
 import { Fragment } from 'react';
 import { getData } from '@/lib/matches';
-import { GetStaticProps, GetStaticPropsContext, InferGetStaticPropsType } from "next";
-import { DayMatches, groupIntoMonths, MatchDisplay, MonthMatches, TimeMatches, toTimeString } from '@/lib/types';
-import { match } from 'assert';
+import { DayMatches, groupIntoMonths, MatchDisplay, TimeMatches, toTimeString } from '@/lib/types';
 
 function Match(props:{ match:MatchDisplay}) {
   const { match: m } = props;
@@ -68,9 +66,9 @@ function Day(props: { day:DayMatches }) {
   );
 }
 
-export default function Home({
-  months: months
-}:InferGetStaticPropsType<typeof getStaticProps>) {
+export default async function Home() {
+
+  const { months:months } = await getMatches();
 
   return (
       <Fragment>
@@ -88,7 +86,7 @@ export default function Home({
   )
 }
 
-export const  getStaticProps = (async (context:GetStaticPropsContext):Promise<{ props:{ months: MonthMatches[] } }> =>{
+async function getMatches() {
   const data = await getData();
 
   const today = new Date();
@@ -102,11 +100,6 @@ export const  getStaticProps = (async (context:GetStaticPropsContext):Promise<{ 
   const matches = groupIntoMonths(sortedData);
 
   return {
-    props: {
       months: matches
-    }
-  };
-
-}) satisfies GetStaticProps<{
-  months:MonthMatches[]
-}>
+    };
+}
