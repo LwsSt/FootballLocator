@@ -9,7 +9,17 @@ const getMatches = async (data:{name:string, link:string}): Promise<MatchData[]>
   return getMatchData(icalData);
 }
 
-export const getData = async () :Promise<MatchData[]> => {
+const getData = async () :Promise<MatchData[]> => {
   const matches = leagues.map(l => getMatches(l))
   return (await Promise.all(matches)).flat();
 }
+
+const globalCache = globalThis as typeof globalThis & {
+  matchData?: MatchData[]
+};
+
+if (!globalCache.matchData) {
+  globalCache.matchData = await getData();
+}
+
+export const matchData = globalCache.matchData!;

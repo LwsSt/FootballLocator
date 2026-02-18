@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { getData } from '@/lib/matches';
+import { matchData } from '@/lib/matches';
 import { DayMatches, groupIntoMonths, MatchDisplay, TimeMatches, toTimeString } from '@/lib/types';
 
 function Match(props:{ match:MatchDisplay}) {
@@ -66,9 +66,9 @@ function Day(props: { day:DayMatches }) {
   );
 }
 
-export default async function Home() {
+export default function Home() {
 
-  const { months:months } = await getMatches();
+  const { months:months } = getMatches();
 
   return (
       <Fragment>
@@ -86,8 +86,8 @@ export default async function Home() {
   )
 }
 
-async function getMatches() {
-  const data = await getData();
+function getMatches() {
+  const data = matchData;
 
   const today = new Date();
   today.setHours(0);
