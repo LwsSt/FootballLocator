@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { matchData } from '@/lib/matches';
-import { DayMatches, groupIntoMonths, MatchDisplay, TimeMatches, toTimeString } from '@/lib/types';
+import { DayMatches, groupIntoMonths, MatchDisplay, TimeMatches, toDayAndMonthString, toMonthAndYearString, toTimeString } from '@/lib/types';
 
 function Match(props:{ match:MatchDisplay}) {
   const { match: m } = props;
@@ -23,15 +23,12 @@ function Match(props:{ match:MatchDisplay}) {
 
 function Time(props: {time:TimeMatches}) {
   const { time: time } = props;
-  const matchTime = new Date();
-  matchTime.setHours(time.time.hour);
-  matchTime.setMinutes(time.time.minute);
 
   return (
     <details className="time-slot">
       <summary>
         <div className="time-slot-header">
-            <div className="slot-time">{toTimeString(matchTime)}</div>
+            <div className="slot-time">{toTimeString(time.time)}</div>
             <div className="slot-count">{time.matches.length} Matches</div>
         </div>
       </summary>
@@ -44,8 +41,7 @@ function Time(props: {time:TimeMatches}) {
 
 function Day(props: { day:DayMatches }) {
   const { day: day } = props;
-  const date = new Date(`${day.day} ${day.month.month} ${day.month.year}`);
-  const dayName = date.toLocaleString('default', { weekday: 'long'});
+  const dayName = day.day.toLocaleString('default', { weekday: 'long'});
   const totalMatches = day.times.map(t => t.matches.length).reduce((acc, curr) => acc + curr, 0);
 
   return (
@@ -53,7 +49,7 @@ function Day(props: { day:DayMatches }) {
       <div className="match-card-header">
           <div className="match-date-info">
               <div className="match-day">{dayName}</div>
-              <div className="match-date">{day.day} {day.month.month}</div>
+              <div className="match-date">{toDayAndMonthString(day.day)}</div>
               <div className="total-matches">{totalMatches} Matches Total</div>
           </div>
           <div className="match-status">LIVE NOW</div>
@@ -75,7 +71,7 @@ export default function Home() {
           {months.map((m) => (
             <Fragment key={m.key}>
               <div className="month-header">
-                  <div className="month-header-title">{m.month.month} 2026</div>
+                  <div className="month-header-title">{toMonthAndYearString(m.month)}</div>
               </div>
               <div className="match-grid">
                   {m.days.map(d => <Day day={d} key={d.key} />)}

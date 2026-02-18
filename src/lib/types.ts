@@ -1,5 +1,7 @@
-const dayFormatter = Intl.DateTimeFormat('en-GB', { dateStyle: 'long' });
+const fullDateFormatter = Intl.DateTimeFormat('en-GB', { dateStyle: 'long' });
 const timeFormatter = Intl.DateTimeFormat('en-GB', { timeStyle: 'short' });
+const monthAndYearFormatter = Intl.DateTimeFormat('en-GB', { month: 'short', year: 'numeric' });
+const dayAndMonthFormatter = Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short' });
 
 export type Uid = string;
 export type Year = number;
@@ -18,30 +20,21 @@ export interface MatchData {
   end: Date
 }
 
-export interface Month {
-  month: string,
-  year: number
-}
-
 export interface MonthMatches {
   key: string,
-  month: Month,
+  month: Date,
   days: DayMatches[]
 }
 
 export interface DayMatches {
   key: string,
-  day: number,
-  month: Month,
+  day: Date,
   times: TimeMatches[]
 }
 
 export interface TimeMatches {
   key: string,
-  time: {
-    hour: number,
-    minute: number
-  },
+  time: Date
   matches: MatchDisplay[]
 }
 
@@ -57,67 +50,72 @@ export interface MatchDisplay {
   endTime: string
 }
 
-export const toDateString = (date:Date):string => dayFormatter.format(date);
+export const toDateString = (date:Date):string => fullDateFormatter.format(date);
 
 export const toTimeString = (date:Date):string => timeFormatter.format(date);
 
+export const toMonthAndYearString = (date:Date):string => monthAndYearFormatter.format(date);
+
+export const toDayAndMonthString = (date:Date):string => dayAndMonthFormatter.format(date);
+
 export function groupIntoMonths(matches: MatchData[]):MonthMatches[] { 
   const matchData = matches.reduce((acc, match) => { 
-    const d = match.start;
-    const monthKey = `${d.getFullYear()}-${d.getMonth() + 1}`
-    const day = d.getDate();
-    const time = `${d.getHours()}:${d.getMinutes()}`;
+    const date = new Date(match.start);
+
+    const timeKey = date.getTime();
+    date.setSeconds(0, 0);
+    date.setMinutes(0);
+    date.setHours(0);
+    const dayKey = date.getTime();
+    date.setDate(1);
+    const monthKey = date.getTime();
     
     acc[monthKey] ??= {}; 
-    acc[monthKey][day] ??= {}; 
-    acc[monthKey][day][time] ??= [];
-    acc[monthKey][day][time].push(match); 
+    acc[monthKey][dayKey] ??= {}; 
+    acc[monthKey][dayKey][timeKey] ??= [];
+    acc[monthKey][dayKey][timeKey].push(match); 
     
     return acc; 
-  }, {} as Record<string, Record<number, Record<string, MatchData[]>>>); 
+  }, {} as Record<number, Record<number, Record<number, MatchData[]>>>); 
+
 
   return Object
     .entries(matchData)
     .map(([monthKey, daysObj]) => {
-      const [yearStr, monthStr] = monthKey.split("-");
-      const year = Number(yearStr);
-      const month = toMonthString(Number(monthStr));
 
       const days: DayMatches[] = Object
         .entries(daysObj)
-        .map(([dayStr, matchesObj]) => {
+        .map(([dayKey, matchesObj]) => {
 
           const times:TimeMatches[] = Object
             .entries(matchesObj)
-            .map(([startTime, matches]) => {
-              const [hourStr, mintueStr] = startTime.split(":");
+            .map(([timeKey, matches]) => {
+              const time = new Date(Number(timeKey));
 
               return {
-                key: startTime,
-                time: {
-                  hour: Number(hourStr),
-                  minute: Number(mintueStr)
-                },
+                key: timeKey,
+                time: time,
                 matches: matches.map(toDisplay)
               }
             });
 
+        const day = new Date(Number(dayKey));
+
         return {
-          key: `${month}-${dayStr}`,
-          day: Number(dayStr),
-          month: {month: month, year: year},
+          key: dayKey,
+          day: day,
           times:times
         };
       }
     );
 
+    const month = new Date(Number(monthKey));
+
+
     return {
-      key: `${year}-${month}`,
-      month: {
-        month,
-        year
-      },
-      days
+      key: monthKey,
+      month: month,
+      days: days
     };
   });
 }
@@ -134,27 +132,4 @@ const toDisplay = (match:MatchData):MatchDisplay =>{
     startTime: toTimeString(match.start),
     endTime: toTimeString(match.end)
   };
-}
-
-const months = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
-];
-
-const toMonthString = (month:number) => {
-  if (month < 1 || month > 12){
-    throw new Error('Invalid month');
-  }
-
-  return months[month - 1];
 }
