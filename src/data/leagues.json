@@ -1,10 +1,30 @@
 [
   {
-    "name": "PremierLeague",
+    "name": "Premier League",
     "link": "https://ics.ecal.com/ecal-sub/698672d24210a50002e499e8/English%20Premier%20League.ics"
   },
   {
     "name": "EFL Championship",
-    "link":  "https://ics.ecal.com/ecal-sub/698670b23858090002fad416/English%20Football%20League.ics"
+    "link": "https://ics.ecal.com/ecal-sub/698670b23858090002fad416/English%20Football%20League.ics"
+  },
+  {
+    "name": "EFL League One",
+    "link": "https://ics.ecal.com/ecal-sub/69960a27ce948a00029092e2/English%20Football%20League.ics"
+  },
+  {
+    "name": "EFL League Two",
+    "link": "https://ics.ecal.com/ecal-sub/69960a6a845b2d0002d5d60e/English%20Football%20League.ics"
+  },
+  {
+    "name": "National League",
+    "link": "https://www.skysports.com/calendars/football/fixtures/competitions/national-league"
+  },
+  {
+    "name": "National League North",
+    "link": "https://www.skysports.com/calendars/football/fixtures/competitions/national-league-north"
+  },
+  {
+    "name": "National League South",
+    "link": "https://www.skysports.com/calendars/football/fixtures/competitions/national-league-south"
   }
 ]
