@@ -452,6 +452,18 @@ h1 {
     color: var(--text-white);
     letter-spacing: 1px;
     font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.match-location-info:hover {
+    color: var(--alert-yellow);
+    transform: translateX(3px);
+}
+
+.match-location-info:hover .stadium-name,
+.match-location-info:hover .city-name {
+    color: var(--alert-yellow);
 }
 
 .stadium-name {
@@ -757,7 +769,6 @@ footer {
         grid-template-columns: repeat(3, 1fr);
     }
 }
-
 .status-value-danger {
   color: var(--warning-red);
 }

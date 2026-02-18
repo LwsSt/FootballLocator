@@ -1,7 +1,8 @@
 import { Fragment } from 'react';
 import { matchData } from '@/lib/matches';
-import { DayMatches, groupIntoMonths, MatchData, TimeMatches } from '@/lib/types';
+import { DayMatches, getMapsLink, groupIntoMonths, MatchData, TimeMatches } from '@/lib/types';
 import { toDayAndMonth, toDayName, toMonthAndYear, toTime } from '@/lib/dateFns';
+import Link from 'next/link';
 
 function Match(props:{ match:MatchData}) {
   const { match: m } = props;
@@ -11,13 +12,13 @@ function Match(props:{ match:MatchData}) {
   return (
     <div className="match-item">
       <div className="match-teams">{teamA} vs {teamB}</div>
-      <div className="match-location-info">
+      <Link className="match-location-info" href={getMapsLink(m)} target="_blank" rel="noopener noreferrer">
         <span>📍</span>
         <div>
           <div className="stadium-name">{stadium}</div>
           <div className="city-name">{city}</div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 }
