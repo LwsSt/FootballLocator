@@ -11,7 +11,9 @@ export class Stadia {
 
         stadia.forEach(s => {
             const location:Location = {
-                name: s.name,
+                stadium: s.name,
+                id: s.name,
+                city: 'NULL',
                 coords: [s.coords[0], s.coords[1]],
                 dataLink: s.shortLink,
             };
@@ -29,7 +31,9 @@ export class Stadia {
             return {
                 coords: [0, 0], 
                 dataLink: '',
-                name: 'NULL'
+                id: 'NULL',
+                city: 'CITY',
+                stadium: name
             };
     }
 

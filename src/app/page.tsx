@@ -1,8 +1,9 @@
 import { Fragment } from 'react';
 import { matchData } from '@/lib/matches';
-import { DayMatches, groupIntoMonths, MatchDisplay, TimeMatches, toDayAndMonthString, toMonthAndYearString, toTimeString } from '@/lib/types';
+import { DayMatches, groupIntoMonths, MatchData, TimeMatches } from '@/lib/types';
+import { toDayAndMonth, toDayName, toMonthAndYear, toTime } from '@/lib/dateFns';
 
-function Match(props:{ match:MatchDisplay}) {
+function Match(props:{ match:MatchData}) {
   const { match: m } = props;
   const [teamA, teamB] = m.teams;
   const { stadium, city } = m.location;
@@ -28,7 +29,7 @@ function Time(props: {time:TimeMatches}) {
     <details className="time-slot">
       <summary>
         <div className="time-slot-header">
-            <div className="slot-time">{toTimeString(time.time)}</div>
+            <div className="slot-time">{toTime(time.time)}</div>
             <div className="slot-count">{time.matches.length} Matches</div>
         </div>
       </summary>
@@ -41,7 +42,7 @@ function Time(props: {time:TimeMatches}) {
 
 function Day(props: { day:DayMatches }) {
   const { day: day } = props;
-  const dayName = day.day.toLocaleString('default', { weekday: 'long'});
+  const dayName = toDayName(day.day);
   const totalMatches = day.times.map(t => t.matches.length).reduce((acc, curr) => acc + curr, 0);
 
   return (
@@ -49,7 +50,7 @@ function Day(props: { day:DayMatches }) {
       <div className="match-card-header">
           <div className="match-date-info">
               <div className="match-day">{dayName}</div>
-              <div className="match-date">{toDayAndMonthString(day.day)}</div>
+              <div className="match-date">{toDayAndMonth(day.day)}</div>
               <div className="total-matches">{totalMatches} Matches Total</div>
           </div>
           <div className="match-status">LIVE NOW</div>
@@ -71,7 +72,7 @@ export default function Home() {
           {months.map((m) => (
             <Fragment key={m.key}>
               <div className="month-header">
-                  <div className="month-header-title">{toMonthAndYearString(m.month)}</div>
+                  <div className="month-header-title">{toMonthAndYear(m.month)}</div>
               </div>
               <div className="match-grid">
                   {m.days.map(d => <Day day={d} key={d.key} />)}

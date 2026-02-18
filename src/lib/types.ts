@@ -1,14 +1,11 @@
-const fullDateFormatter = Intl.DateTimeFormat('en-GB', { dateStyle: 'long' });
-const timeFormatter = Intl.DateTimeFormat('en-GB', { timeStyle: 'short' });
-const monthAndYearFormatter = Intl.DateTimeFormat('en-GB', { month: 'short', year: 'numeric' });
-const dayAndMonthFormatter = Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short' });
-
 export type Uid = string;
 export type Year = number;
 
 export interface Location {
-  name: string,
+  id: string,
   coords: [number, number],
+  stadium: string,
+  city: string,
   dataLink: string
 }
 
@@ -35,7 +32,7 @@ export interface DayMatches {
 export interface TimeMatches {
   key: string,
   time: Date
-  matches: MatchDisplay[]
+  matches: MatchData[]
 }
 
 export interface MatchDisplay {
@@ -49,14 +46,6 @@ export interface MatchDisplay {
   startTime: string,
   endTime: string
 }
-
-export const toDateString = (date:Date):string => fullDateFormatter.format(date);
-
-export const toTimeString = (date:Date):string => timeFormatter.format(date);
-
-export const toMonthAndYearString = (date:Date):string => monthAndYearFormatter.format(date);
-
-export const toDayAndMonthString = (date:Date):string => dayAndMonthFormatter.format(date);
 
 export function groupIntoMonths(matches: MatchData[]):MonthMatches[] { 
   const matchData = matches.reduce((acc, match) => { 
@@ -95,7 +84,7 @@ export function groupIntoMonths(matches: MatchData[]):MonthMatches[] {
               return {
                 key: timeKey,
                 time: time,
-                matches: matches.map(toDisplay)
+                matches: matches
               }
             });
 
@@ -120,16 +109,3 @@ export function groupIntoMonths(matches: MatchData[]):MonthMatches[] {
   });
 }
 
-const toDisplay = (match:MatchData):MatchDisplay =>{
-  return {
-    uid: match.uid,
-    location: {
-      stadium: match.location.name,
-      city: 'CITY'
-    },
-    teams: match.teams,
-    day: toDateString(match.start),
-    startTime: toTimeString(match.start),
-    endTime: toTimeString(match.end)
-  };
-}
