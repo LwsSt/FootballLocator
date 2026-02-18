@@ -1,8 +1,1070 @@
 [
   {
-    "name": "St. James' Park, Newcastle",
-    "shortLink": "https://maps.app.goo.gl/ATsjXShYzxq271ov6",
-    "plusCode": "X9GH+68 Newcastle upon Tyne",
-    "coords": [54.97571026886134, -1.621542571657252]
+    "id": "Turf Moor, Burnley",
+    "stadium": "Turf Moor",
+    "city": "Burnley",
+    "coords": ["53.7891", "-2.2302"]
+  },
+  {
+    "id": "Craven Cottage, London",
+    "stadium": "Craven Cottage",
+    "city": "London",
+    "coords": ["51.4749", "-0.2216"]
+  },
+  {
+    "id": "American Express Stadium, Falmer",
+    "stadium": "American Express Stadium",
+    "city": "Falmer",
+    "coords": ["50.8618", "-0.0837"]
+  },
+  {
+    "id": "Hill Dickinson Stadium, Liverpool",
+    "stadium": "Hill Dickinson Stadium",
+    "city": "Liverpool",
+    "coords": ["53.4308", "-2.9608"]
+  },
+  {
+    "id": "Vitality Stadium, Bournemouth",
+    "stadium": "Vitality Stadium",
+    "city": "Bournemouth",
+    "coords": ["50.7352", "-1.8383"]
+  },
+  {
+    "id": "Old Trafford, Manchester",
+    "stadium": "Old Trafford",
+    "city": "Manchester",
+    "coords": ["53.4631", "-2.2913"]
+  },
+  {
+    "id": "London Stadium, London",
+    "stadium": "London Stadium",
+    "city": "London",
+    "coords": ["51.5387", "-0.0166"]
+  },
+  {
+    "id": "Tottenham Hotspur Stadium, London",
+    "stadium": "Tottenham Hotspur Stadium",
+    "city": "London",
+    "coords": ["51.6042", "-0.0664"]
+  },
+  {
+    "id": "Anfield, Liverpool",
+    "stadium": "Anfield",
+    "city": "Liverpool",
+    "coords": ["53.4308", "-2.9608"]
+  },
+  {
+    "id": "Stadium of Light, Sunderland",
+    "stadium": "Stadium of Light",
+    "city": "Sunderland",
+    "coords": ["54.9146", "-1.3884"]
+  },
+  {
+    "id": "Stamford Bridge, London",
+    "stadium": "Stamford Bridge",
+    "city": "London",
+    "coords": ["51.4817", "-0.1910"]
+  },
+  {
+    "id": "Villa Park, Birmingham",
+    "stadium": "Villa Park",
+    "city": "Birmingham",
+    "coords": ["52.5091", "-1.8848"]
+  },
+  {
+    "id": "Selhurst Park, London",
+    "stadium": "Selhurst Park",
+    "city": "London",
+    "coords": ["51.3983", "-0.0854"]
+  },
+  {
+    "id": "Gtech Community Stadium, Brentford",
+    "stadium": "Gtech Community Stadium",
+    "city": "Brentford",
+    "coords": ["51.4906", "-0.2887"]
+  },
+  {
+    "id": "Elland Road, Leeds",
+    "stadium": "Elland Road",
+    "city": "Leeds",
+    "coords": ["53.7778", "-1.5319"]
+  },
+  {
+    "id": "Molineux Stadium, Wolverhampton",
+    "stadium": "Molineux Stadium",
+    "city": "Wolverhampton",
+    "coords": ["52.5902", "-2.1304"]
+  },
+  {
+    "id": "St. James' Park, Newcastle",
+    "stadium": "St. James' Park",
+    "city": "Newcastle",
+    "coords": ["54.9756", "-1.6217"]
+  },
+  {
+    "id": "The City Ground, Nottingham",
+    "stadium": "The City Ground",
+    "city": "Nottingham",
+    "coords": ["52.9400", "-1.1328"]
+  },
+  {
+    "id": "Emirates Stadium, London",
+    "stadium": "Emirates Stadium",
+    "city": "London",
+    "coords": ["51.5549", "-0.1084"]
+  },
+  {
+    "id": "The Kassam Stadium, Oxford",
+    "stadium": "The Kassam Stadium",
+    "city": "Oxford",
+    "coords": ["51.7164", "-1.2079"]
+  },
+  {
+    "id": "SToK Cae Ras, Wrexham",
+    "stadium": "SToK Cae Ras",
+    "city": "Wrexham",
+    "coords": ["53.0506", "-3.0040"]
+  },
+  {
+    "id": "MATRADE Loftus Road, London",
+    "stadium": "MATRADE Loftus Road",
+    "city": "London",
+    "coords": ["51.5093", "-0.2322"]
+  },
+  {
+    "id": "The MKM Stadium, Hull",
+    "stadium": "The MKM Stadium",
+    "city": "Hull",
+    "coords": ["53.7461", "-0.3678"]
+  },
+  {
+    "id": "Riverside Stadium, Middlesbrough",
+    "stadium": "Riverside Stadium",
+    "city": "Middlesbrough",
+    "coords": ["54.5783", "-1.2169"]
+  },
+  {
+    "id": "Deepdale, Preston",
+    "stadium": "Deepdale",
+    "city": "Preston",
+    "coords": ["53.7753", "-2.6881"]
+  },
+  {
+    "id": "The Valley, London",
+    "stadium": "The Valley",
+    "city": "London",
+    "coords": ["51.4864", "0.0365"]
+  },
+  {
+    "id": "Vicarage Road, Watford",
+    "stadium": "Vicarage Road",
+    "city": "Watford",
+    "coords": ["51.6498", "-0.4015"]
+  },
+  {
+    "id": "Fratton Park, Portsmouth",
+    "stadium": "Fratton Park",
+    "city": "Portsmouth",
+    "coords": ["50.7964", "-1.0638"]
+  },
+  {
+    "id": "Hillsborough, Sheffield",
+    "stadium": "Hillsborough",
+    "city": "Sheffield",
+    "coords": ["53.4114", "-1.5005"]
+  },
+  {
+    "id": "Portman Road, Ipswich",
+    "stadium": "Portman Road",
+    "city": "Ipswich",
+    "coords": ["52.0551", "1.1448"]
+  },
+  {
+    "id": "Swansea.com Stadium, Swansea",
+    "stadium": "Swansea.com Stadium",
+    "city": "Swansea",
+    "coords": ["51.6428", "-3.9351"]
+  },
+  {
+    "id": "Bramall Lane, Sheffield",
+    "stadium": "Bramall Lane",
+    "city": "Sheffield",
+    "coords": ["53.3703", "-1.4708"]
+  },
+  {
+    "id": "St. Mary's Stadium, Southampton",
+    "stadium": "St. Mary's Stadium",
+    "city": "Southampton",
+    "coords": ["50.9058", "-1.3911"]
+  },
+  {
+    "id": "The Coventry Building Society Arena, Coventry",
+    "stadium": "The Coventry Building Society Arena",
+    "city": "Coventry",
+    "coords": ["52.4480", "-1.4960"]
+  },
+  {
+    "id": "Carrow Road, Norwich",
+    "stadium": "Carrow Road",
+    "city": "Norwich",
+    "coords": ["52.6222", "1.3092"]
+  },
+  {
+    "id": "King Power Stadium, Leicester",
+    "stadium": "King Power Stadium",
+    "city": "Leicester",
+    "coords": ["52.6203", "-1.1422"]
+  },
+  {
+    "id": "bet365 Stadium, Stoke",
+    "stadium": "bet365 Stadium",
+    "city": "Stoke-on-Trent",
+    "coords": ["52.9884", "-2.1756"]
+  },
+  {
+    "id": "The Den, London",
+    "stadium": "The Den",
+    "city": "London",
+    "coords": ["51.4859", "-0.0509"]
+  },
+  {
+    "id": "Ewood Park, Blackburn",
+    "stadium": "Ewood Park",
+    "city": "Blackburn",
+    "coords": ["53.7286", "-2.4892"]
+  },
+  {
+    "id": "Ashton Gate Stadium, Bristol",
+    "stadium": "Ashton Gate Stadium",
+    "city": "Bristol",
+    "coords": ["51.4400", "-2.6203"]
+  },
+  {
+    "id": "St. Andrew's @ Knighthead Park, Birmingham",
+    "stadium": "St. Andrew's",
+    "city": "Birmingham",
+    "coords": ["52.4781", "-1.8681"]
+  },
+  {
+    "id": "Hawthorns, West Bromwich",
+    "stadium": "The Hawthorns",
+    "city": "West Bromwich",
+    "coords": ["52.5091", "-1.9639"]
+  },
+  {
+    "id": "Pride Park Stadium, Derby",
+    "stadium": "Pride Park Stadium",
+    "city": "Derby",
+    "coords": ["52.9150", "-1.4472"]
+  },
+  {
+    "id": "The Cherry Red Records Stadium, London",
+    "stadium": "The Cherry Red Records Stadium",
+    "city": "London",
+    "coords": ["51.4307", "-0.1848"]
+  },
+  {
+    "id": "Stevenage FC Stadium, Stevenage",
+    "stadium": "Lamex Stadium",
+    "city": "Stevenage",
+    "coords": ["51.8900", "-0.1942"]
+  },
+  {
+    "id": "University of Bradford Stadium, Bradford",
+    "stadium": "Valley Parade",
+    "city": "Bradford",
+    "coords": ["53.8042", "-1.7592"]
+  },
+  {
+    "id": "Home Park, Plymouth",
+    "stadium": "Home Park",
+    "city": "Plymouth",
+    "coords": ["50.3881", "-4.1508"]
+  },
+  {
+    "id": "Oakwell, Barnsley",
+    "stadium": "Oakwell",
+    "city": "Barnsley",
+    "coords": ["53.5522", "-1.4678"]
+  },
+  {
+    "id": "One Call Stadium, Mansfield",
+    "stadium": "Field Mill",
+    "city": "Mansfield",
+    "coords": ["53.1392", "-1.2003"]
+  },
+  {
+    "id": "St James Park, Exeter",
+    "stadium": "St James Park",
+    "city": "Exeter",
+    "coords": ["50.7306", "-3.5211"]
+  },
+  {
+    "id": "Kenilworth Road, Luton",
+    "stadium": "Kenilworth Road",
+    "city": "Luton",
+    "coords": ["51.8842", "-0.4317"]
+  },
+  {
+    "id": "Vale Park, Stoke-on-Trent",
+    "stadium": "Vale Park",
+    "city": "Stoke-on-Trent",
+    "coords": ["53.0494", "-2.1931"]
+  },
+  {
+    "id": "Edgeley Park, Stockport",
+    "stadium": "Edgeley Park",
+    "city": "Stockport",
+    "coords": ["53.3997", "-2.1667"]
+  },
+  {
+    "id": "Weston Homes Stadium, Peterborough",
+    "stadium": "London Road",
+    "city": "Peterborough",
+    "coords": ["52.5647", "-0.2403"]
+  },
+  {
+    "id": "Toughsheet Community Stadium, Bolton",
+    "stadium": "Toughsheet Community Stadium",
+    "city": "Bolton",
+    "coords": ["53.5806", "-2.5356"]
+  },
+  {
+    "id": "Accu Stadium, Huddersfield",
+    "stadium": "Kirklees Stadium",
+    "city": "Huddersfield",
+    "coords": ["53.6542", "-1.7683"]
+  },
+  {
+    "id": "Sixfields Stadium, Northampton",
+    "stadium": "Sixfields Stadium",
+    "city": "Northampton",
+    "coords": ["52.2351", "-0.9348"]
+  },
+  {
+    "id": "AESSEAL New York Stadium, Rotherham",
+    "stadium": "AESSEAL New York Stadium",
+    "city": "Rotherham",
+    "coords": ["53.4278", "-1.3622"]
+  },
+  {
+    "id": "Adams Park, Wycombe",
+    "stadium": "Adams Park",
+    "city": "High Wycombe",
+    "coords": ["51.6306", "-0.8003"]
+  },
+  {
+    "id": "The Brick Community Stadium, Wigan",
+    "stadium": "The Brick Community Stadium",
+    "city": "Wigan",
+    "coords": ["53.5478", "-2.6539"]
+  },
+  {
+    "id": "Bloomfield Road, Blackpool",
+    "stadium": "Bloomfield Road",
+    "city": "Blackpool",
+    "coords": ["53.8047", "-3.0481"]
+  },
+  {
+    "id": "Cardiff City Stadium, Cardiff",
+    "stadium": "Cardiff City Stadium",
+    "city": "Cardiff",
+    "coords": ["51.4728", "-3.2031"]
+  },
+  {
+    "id": "LNER Stadium, Lincoln",
+    "stadium": "Sincil Bank",
+    "city": "Lincoln",
+    "coords": ["53.2144", "-0.5397"]
+  },
+  {
+    "id": "Select Car Leasing Stadium, Reading",
+    "stadium": "Madejski Stadium",
+    "city": "Reading",
+    "coords": ["51.4222", "-0.9828"]
+  },
+  {
+    "id": "Pirelli Stadium, Burton",
+    "stadium": "Pirelli Stadium",
+    "city": "Burton upon Trent",
+    "coords": ["52.8219", "-1.6331"]
+  },
+  {
+    "id": "The Eco-Power Stadium, Doncaster",
+    "stadium": "Keepmoat Stadium",
+    "city": "Doncaster",
+    "coords": ["53.5097", "-1.1142"]
+  },
+  {
+    "id": "BetWright Stadium, London",
+    "stadium": "Hayes Lane",
+    "city": "London",
+    "coords": ["51.3861", "0.0189"]
+  },
+  {
+    "id": "Copperjax Community Stadium, Bromley",
+    "stadium": "Hayes Lane",
+    "city": "London",
+    "coords": ["51.3861", "0.0189"]
+  },
+  {
+    "id": "SO Legal Stadium, Barrow-in-Furness",
+    "stadium": "Holker Street",
+    "city": "Barrow-in-Furness",
+    "coords": ["54.1208", "-3.2322"]
+  },
+  {
+    "id": "EV Charger Points Stadium, Cheltenham",
+    "stadium": "Whaddon Road",
+    "city": "Cheltenham",
+    "coords": ["51.9061", "-2.0600"]
+  },
+  {
+    "id": "Stadium MK, Milton Keynes",
+    "stadium": "Stadium MK",
+    "city": "Milton Keynes",
+    "coords": ["52.0097", "-0.7336"]
+  },
+  {
+    "id": "Broadfield Stadium, Crawley",
+    "stadium": "Broadfield Stadium",
+    "city": "Crawley",
+    "coords": ["51.0997", "-0.1947"]
+  },
+  {
+    "id": "Highbury Stadium, Fleetwood",
+    "stadium": "Highbury Stadium",
+    "city": "Fleetwood",
+    "coords": ["53.9214", "-3.0114"]
+  },
+  {
+    "id": "Boundary Park, Oldham",
+    "stadium": "Boundary Park",
+    "city": "Oldham",
+    "coords": ["53.5553", "-2.1286"]
+  },
+  {
+    "id": "Pallet-Track Bescot Stadium, Walsall",
+    "stadium": "Bescot Stadium",
+    "city": "Walsall",
+    "coords": ["52.5653", "-1.9908"]
+  },
+  {
+    "id": "Exercise Stadium, Harrogate",
+    "stadium": "Wetherby Road",
+    "city": "Harrogate",
+    "coords": ["53.9897", "-1.5175"]
+  },
+  {
+    "id": "JobServe Community Stadium, Colchester",
+    "stadium": "Colchester Community Stadium",
+    "city": "Colchester",
+    "coords": ["51.9142", "0.8978"]
+  },
+  {
+    "id": "Priestfield Stadium, Gillingham",
+    "stadium": "Priestfield Stadium",
+    "city": "Gillingham",
+    "coords": ["51.3861", "0.5611"]
+  },
+  {
+    "id": "SMH Group Stadium, Chesterfield",
+    "stadium": "Saltergate (New)",
+    "city": "Chesterfield",
+    "coords": ["53.2533", "-1.4467"]
+  },
+  {
+    "id": "The Croud Meadow, Shrewsbury",
+    "stadium": "New Meadow",
+    "city": "Shrewsbury",
+    "coords": ["52.6886", "-2.7489"]
+  },
+  {
+    "id": "Prenton Park, Birkenhead",
+    "stadium": "Prenton Park",
+    "city": "Birkenhead",
+    "coords": ["53.3736", "-3.0331"]
+  },
+  {
+    "id": "The Hive Stadium, Barnet",
+    "stadium": "The Hive Stadium",
+    "city": "London",
+    "coords": ["51.5997", "-0.2933"]
+  },
+  {
+    "id": "Mornflake Stadium, Crewe",
+    "stadium": "Gresty Road",
+    "city": "Crewe",
+    "coords": ["53.0875", "-2.4358"]
+  },
+  {
+    "id": "Peninsula Stadium, Salford",
+    "stadium": "Moor Lane",
+    "city": "Salford",
+    "coords": ["53.5133", "-2.2750"]
+  },
+  {
+    "id": "Wham Stadium, Accrington",
+    "stadium": "Crown Ground",
+    "city": "Accrington",
+    "coords": ["53.7647", "-2.3708"]
+  },
+  {
+    "id": "Memorial Stadium, Bristol",
+    "stadium": "Memorial Stadium",
+    "city": "Bristol",
+    "coords": ["51.4861", "-2.5833"]
+  },
+  {
+    "id": "Meadow Lane, Nottingham",
+    "stadium": "Meadow Lane",
+    "city": "Nottingham",
+    "coords": ["52.9431", "-1.1372"]
+  },
+  {
+    "id": "The Nigel Eady County Ground, Swindon",
+    "stadium": "County Ground",
+    "city": "Swindon",
+    "coords": ["51.5639", "-1.7708"]
+  },
+  {
+    "id": "Cledara Abbey Stadium, Cambridge",
+    "stadium": "Abbey Stadium",
+    "city": "Cambridge",
+    "coords": ["52.2128", "0.1542"]
+  },
+  {
+    "id": "Blundell Park, Grimsby",
+    "stadium": "Blundell Park",
+    "city": "Cleethorpes",
+    "coords": ["53.5700", "-0.0464"]
+  },
+  {
+    "id": "Rodney Parade, Newport",
+    "stadium": "Rodney Parade",
+    "city": "Newport",
+    "coords": ["51.5886", "-2.9881"]
+  },
+  {
+    "id": "The Autotech Stadium",
+    "stadium": "Damson Park",
+    "city": "Solihull",
+    "coords": ["52.4275", "-1.7611"]
+  },
+  {
+    "id": "Mill Farm",
+    "stadium": "Mill Farm",
+    "city": "Wesham",
+    "coords": ["53.7911", "-2.8906"]
+  },
+  {
+    "id": "The EBB Stadium at the Recreation Ground",
+    "stadium": "Recreation Ground",
+    "city": "Aldershot",
+    "coords": ["51.2489", "-0.7553"]
+  },
+  {
+    "id": "J. Davidson Stadium",
+    "stadium": "Moss Lane",
+    "city": "Altrincham",
+    "coords": ["53.3769", "-2.3486"]
+  },
+  {
+    "id": "The Hive Stadium",
+    "stadium": "The Hive Stadium",
+    "city": "London",
+    "coords": ["51.5997", "-0.2933"]
+  },
+  {
+    "id": "The Jakemans Community Stadium",
+    "stadium": "York Street",
+    "city": "Boston",
+    "coords": ["52.9722", "-0.0150"]
+  },
+  {
+    "id": "Victoria Road",
+    "stadium": "Victoria Road",
+    "city": "Dagenham",
+    "coords": ["51.5478", "0.1603"]
+  },
+  {
+    "id": "Gateshead International Stadium",
+    "stadium": "International Stadium",
+    "city": "Gateshead",
+    "coords": ["54.9614", "-1.5794"]
+  },
+  {
+    "id": "York Road",
+    "stadium": "York Road",
+    "city": "Maidenhead",
+    "coords": ["51.5189", "-0.7214"]
+  },
+  {
+    "id": "Roots Hall",
+    "stadium": "Roots Hall",
+    "city": "Southend-on-Sea",
+    "coords": ["51.5494", "0.7017"]
+  },
+  {
+    "id": "The Lamb Ground",
+    "stadium": "The Lamb Ground",
+    "city": "Tamworth",
+    "coords": ["52.6247", "-1.6858"]
+  },
+  {
+    "id": "Huish Park",
+    "stadium": "Huish Park",
+    "city": "Yeovil",
+    "coords": ["50.9503", "-2.6739"]
+  },
+  {
+    "id": "Amlin Stadium",
+    "stadium": "Cressing Road",
+    "city": "Braintree",
+    "coords": ["51.8719", "0.5694"]
+  },
+  {
+    "id": "Silverlake Stadium",
+    "stadium": "Ten Acres",
+    "city": "Eastleigh",
+    "coords": ["50.9639", "-1.3703"]
+  },
+  {
+    "id": "Kuflink Stadium",
+    "stadium": "Stonebridge Road",
+    "city": "Northfleet",
+    "coords": ["51.4489", "0.3164"]
+  },
+  {
+    "id": "The MBi Shay Stadium",
+    "stadium": "The Shay",
+    "city": "Halifax",
+    "coords": ["53.7153", "-1.8547"]
+  },
+  {
+    "id": "The innocent New Lawn Stadium",
+    "stadium": "The New Lawn",
+    "city": "Nailsworth",
+    "coords": ["51.6967", "-2.2272"]
+  },
+  {
+    "id": "Suit Direct Stadium",
+    "stadium": "Victoria Park",
+    "city": "Hartlepool",
+    "coords": ["54.6933", "-1.2133"]
+  },
+  {
+    "id": "Spotland",
+    "stadium": "Spotland Stadium",
+    "city": "Rochdale",
+    "coords": ["53.6206", "-2.1794"]
+  },
+  {
+    "id": "VBS Community Stadium",
+    "stadium": "Gander Green Lane",
+    "city": "Sutton",
+    "coords": ["51.3694", "-0.1947"]
+  },
+  {
+    "id": "Ruislip Manor Sports & Social Club",
+    "stadium": "Grosvenor Vale",
+    "city": "Ruislip",
+    "coords": ["51.5708", "-0.4131"]
+  },
+  {
+    "id": "The Laithwaite Community Stadium",
+    "stadium": "Kingfield Stadium",
+    "city": "Woking",
+    "coords": ["51.3061", "-0.5592"]
+  },
+  {
+    "id": "LNER Community Stadium",
+    "stadium": "York Community Stadium",
+    "city": "York",
+    "coords": ["53.9911", "-1.0506"]
+  },
+  {
+    "id": "Wembley Stadium",
+    "stadium": "Wembley Stadium",
+    "city": "London",
+    "coords": ["51.5561", "-0.2797"]
+  },
+  {
+    "id": "Managata Pay UK Stadium",
+    "stadium": "Crabble Athletic Ground",
+    "city": "Dover",
+    "coords": ["51.1442", "1.3000"]
+  },
+  {
+    "id": "St. James Park",
+    "stadium": "St James Park",
+    "city": "Exeter",
+    "coords": ["50.7306", "-3.5211"]
+  },
+  {
+    "id": "Brunton Park",
+    "stadium": "Brunton Park",
+    "city": "Carlisle",
+    "coords": ["54.8956", "-2.9136"]
+  },
+  {
+    "id": "Mazuma Stadium",
+    "stadium": "Globe Arena",
+    "city": "Morecambe",
+    "coords": ["54.0664", "-2.8758"]
+  },
+  {
+    "id": "Sands Venue Stadium",
+    "stadium": "Glanford Park",
+    "city": "Scunthorpe",
+    "coords": ["53.5858", "-0.6947"]
+  },
+  {
+    "id": "Truro Sports Hub",
+    "stadium": "Truro Sports Hub",
+    "city": "Truro",
+    "coords": ["50.2541", "-5.0886"]
+  },
+  {
+    "id": "The Silverlands",
+    "stadium": "The Silverlands",
+    "city": "Buxton",
+    "coords": ["53.2567", "-1.9103"]
+  },
+  {
+    "id": "Tameside Stadium",
+    "stadium": "Tameside Stadium",
+    "city": "Ashton-under-Lyne",
+    "coords": ["53.4869", "-2.1158"]
+  },
+  {
+    "id": "Blackwell Meadows",
+    "stadium": "Blackwell Meadows",
+    "city": "Darlington",
+    "coords": ["54.5097", "-1.5639"]
+  },
+  {
+    "id": "Edgar Street",
+    "stadium": "Edgar Street",
+    "city": "Hereford",
+    "coords": ["52.0628", "-2.7183"]
+  },
+  {
+    "id": "The Walks Stadium",
+    "stadium": "The Walks",
+    "city": "King's Lynn",
+    "coords": ["52.7514", "0.4075"]
+  },
+  {
+    "id": "The Marine Travel Arena",
+    "stadium": "Rossett Park",
+    "city": "Crosby",
+    "coords": ["53.4839", "-3.0336"]
+  },
+  {
+    "id": "Lincoln Road",
+    "stadium": "Lincoln Road",
+    "city": "Enfield",
+    "coords": ["51.6522", "-0.0553"]
+  },
+  {
+    "id": "Dales Lane",
+    "stadium": "Dales Lane",
+    "city": "Rushall",
+    "coords": ["52.6186", "-1.9547"]
+  },
+  {
+    "id": "Merseyrail Community Stadium",
+    "stadium": "Haig Avenue",
+    "city": "Southport",
+    "coords": ["53.6389", "-2.9786"]
+  },
+  {
+    "id": "Brewery Field",
+    "stadium": "Brewery Field",
+    "city": "Spennymoor",
+    "coords": ["54.7183", "-1.5975"]
+  },
+  {
+    "id": "North Street",
+    "stadium": "North Street",
+    "city": "Alfreton",
+    "coords": ["53.0992", "-1.3917"]
+  },
+  {
+    "id": "Lookers Vauxhall Stadium",
+    "stadium": "Deva Stadium",
+    "city": "Chester",
+    "coords": ["53.1897", "-2.9192"]
+  },
+  {
+    "id": "Victory Park",
+    "stadium": "Victory Park",
+    "city": "Chorley",
+    "coords": ["53.6528", "-2.6417"]
+  },
+  {
+    "id": "Aggborough",
+    "stadium": "Aggborough Stadium",
+    "city": "Kidderminster",
+    "coords": ["52.3797", "-2.2461"]
+  },
+  {
+    "id": "New Windmill Ground",
+    "stadium": "New Windmill Ground",
+    "city": "Whitnash",
+    "coords": ["52.2683", "-1.4981"]
+  },
+  {
+    "id": "Bloomfields",
+    "stadium": "Bloomfields",
+    "city": "Needham Market",
+    "coords": ["52.1558", "1.0503"]
+  },
+  {
+    "id": "RAW Charging Stadium",
+    "stadium": "Court Place Farm",
+    "city": "Marston",
+    "coords": ["51.7828", "-1.2269"]
+  },
+  {
+    "id": "Flamingo Land Stadium",
+    "stadium": "Scarborough Sports Village",
+    "city": "Scarborough",
+    "coords": ["54.2694", "-0.4136"]
+  },
+  {
+    "id": "Mariners Park",
+    "stadium": "Mariners Park",
+    "city": "South Shields",
+    "coords": ["54.9806", "-1.4286"]
+  },
+  {
+    "id": "Cantilever Park",
+    "stadium": "Cantilever Park",
+    "city": "Warrington",
+    "coords": ["53.3853", "-2.5739"]
+  },
+  {
+    "id": "Neuven Stadium",
+    "stadium": "Neuven Stadium",
+    "city": "Radcliffe",
+    "coords": ["53.5606", "-2.3331"]
+  },
+  {
+    "id": "The New Eyrie",
+    "stadium": "The New Eyrie",
+    "city": "Bedford",
+    "coords": ["52.1483", "-0.3986"]
+  },
+  {
+    "id": "The Tarmac Silverlands Stadium",
+    "stadium": "The Silverlands",
+    "city": "Buxton",
+    "coords": ["53.2567", "-1.9103"]
+  },
+  {
+    "id": "Moss Rose Ground",
+    "stadium": "Moss Rose",
+    "city": "Macclesfield",
+    "coords": ["53.2436", "-2.1261"]
+  },
+  {
+    "id": "Penydarren Park",
+    "stadium": "Penydarren Park",
+    "city": "Merthyr Tydfil",
+    "coords": ["51.7533", "-3.3764"]
+  },
+  {
+    "id": "New Bucks Head",
+    "stadium": "New Bucks Head",
+    "city": "Telford",
+    "coords": ["52.6931", "-2.4939"]
+  },
+  {
+    "id": "MandM Edgar Street Stadium",
+    "stadium": "Edgar Street",
+    "city": "Hereford",
+    "coords": ["52.0628", "-2.7183"]
+  },
+  {
+    "id": "Mounting Systems Stadium",
+    "stadium": "The New Defence",
+    "city": "Horley",
+    "coords": ["51.1719", "-0.1556"]
+  },
+  {
+    "id": "Windsor Foodservice Stadium",
+    "stadium": "Sandy Lane",
+    "city": "Worksop",
+    "coords": ["53.3039", "-1.1333"]
+  },
+  {
+    "id": "Sixways Stadium",
+    "stadium": "Sixways Stadium",
+    "city": "Worcester",
+    "coords": ["52.2158", "-2.1642"]
+  },
+  {
+    "id": "The Valley Stadium",
+    "stadium": "The Valley",
+    "city": "Redditch",
+    "coords": ["52.3081", "-1.9172"]
+  },
+  {
+    "id": "Parkside Stadium",
+    "stadium": "Parkside",
+    "city": "Aveley",
+    "coords": ["51.4989", "0.2644"]
+  },
+  {
+    "id": "Hardenhuish Park",
+    "stadium": "Hardenhuish Park",
+    "city": "Chippenham",
+    "coords": ["51.4703", "-2.1256"]
+  },
+  {
+    "id": "Meadowbank",
+    "stadium": "Meadowbank",
+    "city": "Dorking",
+    "coords": ["51.2339", "-0.3347"]
+  },
+  {
+    "id": "Priory Lane Stadium",
+    "stadium": "Priory Lane",
+    "city": "Eastbourne",
+    "coords": ["50.7936", "0.3178"]
+  },
+  {
+    "id": "Queen Elizabeth II Stadium",
+    "stadium": "QEII Stadium",
+    "city": "Enfield",
+    "coords": ["51.6661", "-0.0658"]
+  },
+  {
+    "id": "Paddy Power Park",
+    "stadium": "Farnborough Stadium",
+    "city": "Farnborough",
+    "coords": ["51.2947", "-0.7761"]
+  },
+  {
+    "id": "Focus Community Arena",
+    "stadium": "Vauxhall Road",
+    "city": "Hemel Hempstead",
+    "coords": ["51.7633", "-0.4497"]
+  },
+  {
+    "id": "Arbour Park",
+    "stadium": "Arbour Park",
+    "city": "Slough",
+    "coords": ["51.5186", "-0.5914"]
+  },
+  {
+    "id": "The Halcyon Wealth Longmead Stadium",
+    "stadium": "Longmead Stadium",
+    "city": "Tonbridge",
+    "coords": ["51.2114", "0.2700"]
+  },
+  {
+    "id": "J Hearnden Skip Hire Community Stadium",
+    "stadium": "Park View Road",
+    "city": "Welling",
+    "coords": ["51.4586", "0.1111"]
+  },
+  {
+    "id": "Bob Lucas Stadium",
+    "stadium": "Bob Lucas Stadium",
+    "city": "Weymouth",
+    "coords": ["50.6197", "-2.4853"]
+  },
+  {
+    "id": "Twerton Park",
+    "stadium": "Twerton Park",
+    "city": "Bath",
+    "coords": ["51.3789", "-2.3956"]
+  },
+  {
+    "id": "Meadow Park",
+    "stadium": "Meadow Park",
+    "city": "Borehamwood",
+    "coords": ["51.6578", "-0.2742"]
+  },
+  {
+    "id": "Melbourne Stadium",
+    "stadium": "Melbourne Stadium",
+    "city": "Chelmsford",
+    "coords": ["51.7486", "0.4572"]
+  },
+  {
+    "id": "The Meadow",
+    "stadium": "The Meadow",
+    "city": "Chesham",
+    "coords": ["51.7011", "-0.6033"]
+  },
+  {
+    "id": "Beveree Stadium",
+    "stadium": "Beveree Stadium",
+    "city": "Hampton",
+    "coords": ["51.4161", "-0.3664"]
+  },
+  {
+    "id": "Hornchurch Stadium",
+    "stadium": "Hornchurch Stadium",
+    "city": "Upminster",
+    "coords": ["51.5544", "0.2378"]
+  },
+  {
+    "id": "Gallagher Stadium",
+    "stadium": "Gallagher Stadium",
+    "city": "Maidstone",
+    "coords": ["51.2817", "0.5211"]
+  },
+  {
+    "id": "Raymond McEnhill Stadium",
+    "stadium": "Raymond McEnhill Stadium",
+    "city": "Salisbury",
+    "coords": ["51.0967", "-1.7917"]
+  },
+  {
+    "id": "Clarence Park",
+    "stadium": "Clarence Park",
+    "city": "St Albans",
+    "coords": ["51.7514", "-0.3214"]
+  },
+  {
+    "id": "Plainmoor",
+    "stadium": "Plainmoor",
+    "city": "Torquay",
+    "coords": ["50.4781", "-3.5208"]
+  },
+  {
+    "id": "Woodspring Stadium",
+    "stadium": "Woodspring Stadium",
+    "city": "Weston-super-Mare",
+    "coords": ["51.3400", "-2.9358"]
+  },
+  {
+    "id": "Sussex Transport Community Stadium",
+    "stadium": "Woodside Road",
+    "city": "Worthing",
+    "coords": ["50.8228", "-0.3833"]
+  },
+  {
+    "id": "Perry's Crabble Stadium",
+    "stadium": "Crabble Athletic Ground",
+    "city": "Dover",
+    "coords": ["51.1442", "1.3000"]
+  },
+  {
+    "id": "The Snows Stadium",
+    "stadium": "Testwood Stadium",
+    "city": "Totton",
+    "coords": ["50.9231", "-1.4889"]
+  },
+  {
+    "id": "The Camping World Community Stadium",
+    "stadium": "Hop Oast",
+    "city": "Horsham",
+    "coords": ["51.0422", "-0.3422"]
   }
 ]

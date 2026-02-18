@@ -11,29 +11,27 @@ export class Stadia {
 
         stadia.forEach(s => {
             const location:Location = {
-                stadium: s.name,
-                id: s.name,
-                city: 'NULL',
+                stadium: s.stadium,
+                id: s.id,
+                city: s.city,
                 coords: [s.coords[0], s.coords[1]],
-                dataLink: s.shortLink,
             };
 
-            this.locations.set(s.name, location);
+            this.locations.set(s.id, location);
         });
     }
     
-    public getStadium(name:string):Location {
-        const stadium = this.locations.get(name);
+    public getStadium(id:string):Location {
+        const stadium = this.locations.get(id);
 
         if (stadium)
             return stadium;
         else 
             return {
-                coords: [0, 0], 
-                dataLink: '',
-                id: 'NULL',
-                city: 'CITY',
-                stadium: name
+                coords: ["0", "0"], 
+                id: id,
+                city: 'NULL',
+                stadium: 'NULL'
             };
     }
 

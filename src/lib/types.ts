@@ -3,10 +3,9 @@ export type Year = number;
 
 export interface Location {
   id: string,
-  coords: [number, number],
+  coords: [string, string],
   stadium: string,
   city: string,
-  dataLink: string
 }
 
 export interface MatchData {
@@ -109,3 +108,8 @@ export function groupIntoMonths(matches: MatchData[]):MonthMatches[] {
   });
 }
 
+export function getMapsLink(matchData:MatchData) {
+  const [lat, lng] = matchData.location.coords;
+
+  return `https://www.google.com/maps?q=${lat},${lng}`;
+}

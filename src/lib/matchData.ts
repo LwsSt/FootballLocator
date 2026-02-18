@@ -2,6 +2,8 @@ import ICAL from 'ical.js';
 import { MatchData, Location } from "./types";
 import { Stadia } from "./stadia";
 
+const stadia = Stadia.getInstance();
+
 const parseTeams = (summary:string):[string, string]|null => {
   const regex = /([\w ]+) vs? ([\w ]+)/
   const result = summary.match(regex);
@@ -13,8 +15,11 @@ const parseTeams = (summary:string):[string, string]|null => {
   }
 }
 
-const getStadium = (name:string):Location => {
-  return Stadia.getInstance().getStadium(name);
+const getStadium = (id:string):Location => {
+  const postponed = / - \(POSTPONED\)/
+  id = id.replace(postponed, '');
+
+  return stadia.getStadium(id);
 }
 
 const parseMatchData = (icalData:ICAL.Event[]):MatchData[] => {
