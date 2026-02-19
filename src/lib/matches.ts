@@ -15,11 +15,14 @@ const getData = async () :Promise<MatchData[]> => {
 }
 
 const globalCache = globalThis as typeof globalThis & {
-  matchData?: MatchData[]
+  matchData?: MatchData[],
+  lastUpdated: Date,
 };
 
 if (!globalCache.matchData) {
   globalCache.matchData = await getData();
+  globalCache.lastUpdated = new Date();
 }
 
 export const matchData = globalCache.matchData!;
+export const lastUpdated = globalCache.lastUpdated;
