@@ -4,7 +4,7 @@ import './global.css';
 
 export const metadata:Metadata = {
   title: "FOOTBALL HAZARD ALERT",
-  description: "Real-time Match Avoidance System"
+  description: "Match Avoidance System"
 }
 
 export const viewport:Viewport = {
@@ -28,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="container">
         <header>
           <h1>FOOTBALL HAZARD ALERT</h1>
-          <div className="subtitle">Real-time Match Avoidance System</div>
+          <div className="subtitle">Match Avoidance System</div>
         </header>
         <div className="status-bar">
           <div className="status-item">
@@ -71,4 +71,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </body>
     </html>
   )
-}
+}}}}}}}}}}}}}}}}}}}}}}}}  )
