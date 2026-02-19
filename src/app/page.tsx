@@ -7,7 +7,7 @@ import Link from 'next/link';
 function Match(props:{ match:MatchData}) {
   const { match: m } = props;
   const [teamA, teamB] = m.teams;
-  const { stadium, city } = m.location;
+  const { id, stadium, city } = m.location;
 
   return (
     <div className="match-item">
@@ -17,6 +17,7 @@ function Match(props:{ match:MatchData}) {
         <div>
           <div className="stadium-name">{stadium}</div>
           <div className="city-name">{city}</div>
+          <div style={{ display: "none" }}>{id}</div>
         </div>
       </Link>
     </div>
