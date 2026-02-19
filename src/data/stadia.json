@@ -1,5 +1,11 @@
 [
   {
+    "id": "Etihad Stadium, Manchester",
+    "stadium": "Etihad Stadium",
+    "city": "Manchester",
+    "coords": ["53.4832!, !-2.2003"]
+  },
+  {
     "id": "Turf Moor, Burnley",
     "stadium": "Turf Moor",
     "city": "Burnley",
@@ -246,7 +252,7 @@
     "coords": ["52.4781", "-1.8681"]
   },
   {
-    "id": "Hawthorns, West Bromwich",
+    "id": "The Hawthorns, West Bromwich",
     "stadium": "The Hawthorns",
     "city": "West Bromwich",
     "coords": ["52.5091", "-1.9639"]
@@ -510,6 +516,12 @@
     "coords": ["53.7647", "-2.3708"]
   },
   {
+    "id": "Wham Stadium",
+    "stadium": "Crown Ground",
+    "city": "Accrington",
+    "coords": ["53.7647", "-2.3708"]
+  },
+  {
     "id": "Memorial Stadium, Bristol",
     "stadium": "Memorial Stadium",
     "city": "Bristol",
@@ -666,7 +678,7 @@
     "coords": ["51.3694", "-0.1947"]
   },
   {
-    "id": "Ruislip Manor Sports & Social Club",
+    "id": "Ruislip Manor Sports &amp; Social Club",
     "stadium": "Grosvenor Vale",
     "city": "Ruislip",
     "coords": ["51.5708", "-0.4131"]
