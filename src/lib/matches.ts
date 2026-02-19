@@ -10,8 +10,14 @@ const getMatches = async (data:{name:string, link:string}): Promise<MatchData[]>
 }
 
 const getData = async () :Promise<MatchData[]> => {
+  const today = new Date();
+  today.setHours(0);
+  today.setMinutes(0);
+
   const matches = leagues.map(l => getMatches(l))
-  return (await Promise.all(matches)).flat();
+  return (await Promise.all(matches))
+    .flat()
+    .filter(m => today <= m.start);
 }
 
 const globalCache = globalThis as typeof globalThis & {

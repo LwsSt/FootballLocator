@@ -93,7 +93,6 @@ function getMatches() {
   today.setMinutes(0);
 
   const sortedData = data
-    .filter(m => m.start >= today)
     .sort((a, b) => a.start.getTime() - b.start.getTime());
 
   const matches = groupIntoMonths(sortedData);
