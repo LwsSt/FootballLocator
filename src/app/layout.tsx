@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import  { Archivo_Black, Roboto_Mono } from 'next/font/google';
 import './global.css';
+import { lastUpdated, matchData } from '@/lib/matches';
 
 export const metadata:Metadata = {
   title: "FOOTBALL HAZARD ALERT",
@@ -23,6 +24,8 @@ const roboto = Roboto_Mono({
 })
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const { activeThreats, upcomingThreats} = getThreatData();
+
   return (
     <html lang="en" className={`${archivo.className} ${roboto.className}`}>
       <body className="container">
@@ -33,20 +36,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="status-bar">
           <div className="status-item">
             <div>ACTIVE THREATS</div>
-            <span className="status-value status-value-danger">3</span>
+            <span className="status-value status-value-danger">{activeThreats}</span>
           </div>
           <div className="status-item">
-            <div>UPCOMING WARNINGS</div>
-            <span className="status-value status-value-warn">2</span>
+            <div>UPCOMING WARNINGS (next 7 days)</div>
+            <span className="status-value status-value-warn">{upcomingThreats}</span>
           </div>
         </div>
         <div className="status-bar">
           <div className="status-item">
             <div>LAST UPDATED</div>
-            <span className="status-value status-value-white">14:32:07</span>
+            <span className="status-value status-value-white">{lastUpdated.toLocaleString("en-GB")}</span>
           </div>
         </div>
-        <div className="nav-bar">
+        {/* <div className="nav-bar">
           <div className="nav-section">
             <div className="nav-label">Month:</div>
             <div className="month-filters">
@@ -64,11 +67,41 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <button className="month-btn">Dec</button>
             </div>
           </div>
-        </div>
+        </div> */}
         <main>
           {children}
         </main>
       </body>
     </html>
   )
-}}}}}}}}}}}}}}}}}}}}}}}}  )
+}
+
+function getThreatData():{activeThreats:number, upcomingThreats:number} {
+  const today = new Date();
+  const day = today.getDate();
+  const month = today.getMonth();
+
+  const upcomingThreshold = new Date(today);
+  upcomingThreshold.setMinutes(0);
+  upcomingThreshold.setHours(0);
+  upcomingThreshold.setDate(today.getDate() + 8);
+
+  const data = matchData;
+
+  const threats = data.reduce((acc, match) => {
+    const { start } = match;
+
+    if (start.getDate() == day && start.getMonth() == month) {
+      acc.current++;
+    } else if (start <= upcomingThreshold) {
+      acc.upcoming++;
+    }
+
+    return acc;
+  }, { current:0, upcoming:0 })
+
+  return {
+    activeThreats: threats.current,
+    upcomingThreats: threats.upcoming
+  }
+}
