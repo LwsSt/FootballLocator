@@ -3,6 +3,7 @@ import { matchData } from '@/lib/matches';
 import { DayMatches, getMapsLink, groupIntoMonths, MatchData, TimeMatches } from '@/lib/types';
 import { toDayAndMonth, toDayName, toMonthAndYear, toTime } from '@/lib/dateFns';
 import Link from 'next/link';
+import AdUnit from '@/components/AdUnit';
 
 function Match(props:{ match:MatchData}) {
   const { match: m } = props;
@@ -79,12 +80,24 @@ export default function Home() {
                   <div className="month-header-title">{toMonthAndYear(m.month)}</div>
               </div>
               <div className="match-grid">
-                  {m.days.map(d => <Day day={d} today={today} key={d.key} />)}
+                {getDays(m.days, today).toArray()}
               </div>
             </Fragment>
           ))}
     </Fragment>
   )
+}
+
+function* getDays(days:DayMatches[], today:Date) {
+  for (let index = 0; index < days.length; index++) {
+    const day = days[index];
+    
+    yield (<Day day={day} today={today} key={day.key} />);
+
+    if (index % 5 == 0) {
+      yield (<AdUnit client="ca-pub-5068605212617728" slot="3443824781" key={`${day.key}01`} />);
+    }
+  }
 }
 
 function getMatches() {
