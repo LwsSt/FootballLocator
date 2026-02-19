@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { Analytics } from "@vercel/analytics/next";
 import  { Archivo_Black, Roboto_Mono } from 'next/font/google';
 import './global.css';
 import { lastUpdated, matchData } from '@/lib/matches';
@@ -71,6 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>
           {children}
         </main>
+        <Analytics />
       </body>
     </html>
   )
