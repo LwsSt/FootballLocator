@@ -8,9 +8,25 @@ import { lastUpdated, matchData } from '@/lib/matches';
 export const metadata:Metadata = {
   title: "FOOTBALL HAZARD ALERT",
   description: "Match Avoidance System",
+  icons:[
+    {
+      rel: "apple-touch-icon",
+      url: "/apple-touch-icon.png",
+      sizes: "180X180"
+    },
+    {
+      url:"/favicon-32x32.png",
+      sizes: "32x32"
+    },
+    {
+      url:"/favicon-16x16.png",
+      sizes: "16x16"
+    }
+  ],
   other: {
     "google-adsense-account": "ca-pub-5068605212617728"
-  }
+  },
+  manifest: "/site.webmanifest"
 }
 
 export const viewport:Viewport = {
