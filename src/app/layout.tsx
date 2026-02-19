@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import Script from 'next/script';
 import { Analytics } from "@vercel/analytics/next";
 import  { Archivo_Black, Roboto_Mono } from 'next/font/google';
 import './global.css';
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
         <Analytics />
+        <Script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5068605212617728" crossOrigin="anonymous" async={true} />
       </body>
     </html>
   )
