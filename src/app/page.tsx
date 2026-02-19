@@ -42,20 +42,21 @@ function Time(props: {time:TimeMatches}) {
   );
 }
 
-function Day(props: { day:DayMatches }) {
-  const { day: day } = props;
+function Day(props: { day:DayMatches, today:Date }) {
+  const { day, today } = props;
   const dayName = toDayName(day.day);
   const totalMatches = day.times.map(t => t.matches.length).reduce((acc, curr) => acc + curr, 0);
+  const isLive = today.getDate() == day.day.getDate() && today.getMonth() == day.day.getMonth()
 
   return (
-    <div className="match-card danger">
+    <div className={`match-card ${isLive ? "danger" : ""}`}>
       <div className="match-card-header">
           <div className="match-date-info">
               <div className="match-day">{dayName}</div>
               <div className="match-date">{toDayAndMonth(day.day)}</div>
               <div className="total-matches">{totalMatches} Matches Total</div>
           </div>
-          <div className="match-status">LIVE NOW</div>
+          {isLive ? <div className="match-status">LIVE NOW</div> : <></>}
       </div>
       
       <div className="time-slots">
@@ -68,6 +69,7 @@ function Day(props: { day:DayMatches }) {
 export default function Home() {
 
   const { months:months } = getMatches();
+  const today = new Date();
 
   return (
       <Fragment>
@@ -77,7 +79,7 @@ export default function Home() {
                   <div className="month-header-title">{toMonthAndYear(m.month)}</div>
               </div>
               <div className="match-grid">
-                  {m.days.map(d => <Day day={d} key={d.key} />)}
+                  {m.days.map(d => <Day day={d} today={today} key={d.key} />)}
               </div>
             </Fragment>
           ))}
