@@ -7,7 +7,10 @@ import { lastUpdated, matchData } from '@/lib/matches';
 
 export const metadata:Metadata = {
   title: "FOOTBALL HAZARD ALERT",
-  description: "Match Avoidance System"
+  description: "Match Avoidance System",
+  other: {
+    "google-adsense-account": "ca-pub-5068605212617728"
+  }
 }
 
 export const viewport:Viewport = {
@@ -74,7 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
         <Analytics />
-        <Script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5068605212617728" crossOrigin="anonymous" async={true} />
+        {/* <Script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5068605212617728" crossOrigin="anonymous" async={true} strategy="beforeInteractive" /> */}
       </body>
     </html>
   )
